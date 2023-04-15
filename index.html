@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  </head>
+  <style>
+    .preview{
+      width: 150px;
+      height: 150px;
+      border: 1px solid black;
+      margin-top: 10px;
+    }
+  </style>
+  <body>
+      <input type="file" id="fileImg">
+      <div class = "preview">
+        <img src="" alt="Preview" id="img" style = "width: 100%; height: 100%;">
+      </div>
+
+    <script>
+      fileImg.onchange = evt => {
+        const [file] = fileImg.files
+        if (file) {
+          img.src = URL.createObjectURL(file)
+        }
+      }
+    </script>
+  </body>
+</html>
